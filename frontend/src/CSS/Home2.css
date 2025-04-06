@@ -1,0 +1,539 @@
+/* humbarger menu coding  */
+
+
+/* History Section */
+.history {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 60vh;
+    padding: 6px;
+    background: #f4f8fc;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); Subtle shadow */
+}
+
+/* History Section Titles */
+.history-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    padding-left: 4px;
+    text-align: left;
+}
+
+/* List Styles */
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* History Items */
+.history li {
+    font-size: 14px;
+    padding: 6px 5px;
+    border-radius: 6px;
+    background:#f4f8fc;
+    margin-bottom: 6px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* Hover Effect */
+/* Hover Effect */
+.history li:hover {
+    /* background: #d5dbdb; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
+    position: relative; /* Ensures the hover effect stays in place */
+    z-index: 10; /* Puts the hovered item above others */
+    background-color: #dfebf8;
+}
+
+/* Tooltip Styling */
+.tooltip-item-history {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip Box */
+.react-tooltip {
+    max-width: 260px !important;
+    text-align: center;
+    white-space: normal;
+    font-size: 12px;
+    padding: 8px;
+    /* background: rgba(0, 0, 0, 0.85); */
+    color: white;
+    border-radius: 6px;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); */
+}
+
+.half-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.half-first{
+    display: flex;
+    flex-direction: column;
+    
+}
+.half-second{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+@media (max-width: 640px) { /* sm breakpoint */
+    .half-sidebar {
+      display: none;
+    }
+  }
+  
+  
+  /* this coding is for profile modal  */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darken background for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it appears above everything */
+  }
+  
+  /* Centered Modal */
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+  }
+
+/* inside profile email coding  */
+.email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+    max-width: 300px; /* Prevents it from stretching too wide */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  }
+  
+  /* Hover Effect */
+  .email:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  /* Highlight part of email */
+  .email-highlight {
+    color: #007bff;
+    font-weight: bold;
+  }
+
+  /* Modal Text */
+.modal-item p {
+    font-size: 14px;
+    color: #444;
+  }
+  /* Modal Items */
+.modal-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    gap: 10px;
+    font-size: 16px;
+  }
+  /* Chat Icon */
+.chatIcon {
+    font-size: 22px;
+  }
+
+/* Delete & Logout Icons */
+.delete .icon {
+    color: red;
+  }
+  
+  .logout .icon {
+    color: #d9534f;
+  }
+
+
+  /* Logout Chat Modal */
+/* Modal Container */
+.logout-chat-modal {
+  width: 90%;
+  max-width: 420px;
+  height: 35vh;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  border: none;
+  position: fixed;
+  top: 50%;
+  overflow-y: hidden;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Box */
+.modal1 {
+  max-width: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Title */
+.logout-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.logout-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Close Button */
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.btn-close:hover {
+  color: #555;
+}
+
+/* Button Container */
+.logout-chat-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background: #f3f3f3;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.btn-cancel:hover {
+  background: #e0e0e0;
+}
+
+/* Confirm Logout Button */
+.btn-confirm {
+  background: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.btn-confirm:hover {
+  background: #c9302c;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .logout-chat-modal {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .logout-title {
+    font-size: 20px;
+  }
+
+  .logout-description {
+    font-size: 14px;
+  }
+
+  .logout-chat-btn {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-cancel,
+  .btn-confirm {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-chat-modal {
+    width: 95%;
+    max-width: 320px;
+  }
+
+  .logout-title {
+    font-size: 18px;
+  }
+
+  .logout-description {
+    font-size: 13px;
+  }
+
+  .btn-cancel,
+  .btn-confirm {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* --------- end of the logout coding ---------------  */
+  /* ----------- delete chat modal -------------  */
+/* Modal Container */
+.delete-chat-modal {
+  width: 90%;
+  max-width: 420px;
+  height: auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  border: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Box */
+.modal1 {
+  max-width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Title */
+.delete-chat-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.delete-description,
+.delete-confirmation {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Close Button */
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.btn-close:hover {
+  color: #555;
+}
+
+/* Button Container */
+.delete-chat-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background: #f3f3f3;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.btn-cancel:hover {
+  background: #e0e0e0;
+}
+
+/* Confirm Deletion Button */
+.btn-confirm {
+  background: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.btn-confirm:hover {
+  background: #c9302c;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .delete-chat-modal {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .delete-chat-title {
+    font-size: 20px;
+  }
+
+  .delete-description,
+  .delete-confirmation {
+    font-size: 14px;
+  }
+
+  .delete-chat-btn {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-cancel,
+  .btn-confirm {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-chat-modal {
+    width: 95%;
+    max-width: 320px;
+  }
+
+  .delete-chat-title {
+    font-size: 18px;
+  }
+
+  .delete-description,
+  .delete-confirmation {
+    font-size: 13px;
+  }
+
+  .btn-cancel,
+  .btn-confirm {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+
+
+  
+
+  /* QR Code Modal */
+.qrcode-modal-overlay {
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    z-index: 99;
+  }
+  
+  .qrcode-modal {
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    color: #444;
+    position: absolute;
+    /* border: 2px solid red; */
+    bottom: 135px;
+    left: -5px;
+    text-align: center;
+    padding: 15px;
+    
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* z-index: 10; */
+  }
+  
+  

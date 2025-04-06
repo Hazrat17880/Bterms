@@ -1,0 +1,1516 @@
+/* General Styles */
+
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  /* background: #fff; */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  transition: width 0.3s ease-in-out;
+  background-color: #333;
+  z-index: 9999; /* Always on top */
+}
+.tooltip-item-history {
+  padding: 10px;
+  cursor: pointer;
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+
+.w-20 {
+  width: 60px !important;
+  min-width: 60px;
+  text-align: center;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main Content Area */
+
+
+/* New Chat Button */
+.newChat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.newChat:hover {
+  background: #e0e0e0;
+}
+
+/* History Section */
+.history {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.history-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.history-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tooltip-item {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+  }
+
+  .main-content {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .newChat {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
+
+
+/* ============================ home container end =================  */
+/* Small Screen Top Bar */
+/* Small Screen Top Bar */
+.small-screen {
+  display: flex;
+  justify-content: space-between; /* Pushes buttons to opposite sides */
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Common Button Styles */
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.comment-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  margin-left: auto; /* Moves the comment button to the right */
+}
+/* Show Only on Small Screens */
+@media (max-width: 768px) {
+  .small-screen {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 769px) {
+  .small-screen {
+    display: none;
+
+  }
+}
+
+/* ----------------------- */
+/* Sidebar */
+.hamburger-btn {
+  display: none; 
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Show hamburger button only on small screens */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+}
+
+.sidebar {
+  background-color: #f9fbff;
+  width: 20vw;
+  min-width: 250px; /* Prevents sidebar from being too narrow */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 25vw; /* Increases width slightly for better usability */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: -60%; /* Initially hidden */
+    transition: left 0.3s ease-in-out;
+  }
+
+  /* Show sidebar when needed */
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: -100%; /* Hide by default */
+    top: 0;
+    transition: left 0.3s ease-in-out;
+    padding: 10px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+/* Sidebar Title */
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-title h1 {
+  font-weight: bold;
+  color: #2c3e50;
+  transition: font-size 0.2s ease-in-out;
+}
+
+.back-btn {
+  border: none;
+  cursor: pointer;
+  font-size: 19px;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1;
+  padding: 6px;
+}
+
+.back-btn:hover {
+  background: rgb(199, 199, 199);
+  border-radius: 5px;
+}
+
+/* --------------------------------------  */
+/* New Chat Button */
+.newChat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px; /* Slightly increased padding for better spacing */
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid blueviolet;
+  margin: 10px 0;
+  z-index: 1;
+  width: fit-content;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Hover Effect */
+.newChat:hover {
+  transform: scale(1.05);
+  color: black;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .newChat {
+    font-size: 16px; /* Reduce font size slightly */
+    padding: 6px 12px;
+  }
+
+  .chatIcon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .newChat {
+    font-size: 15px;
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .chatIcon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newChat {
+    font-size: 14px;
+    padding: 5px 8px;
+    gap: 5px;
+    width: 100%; /* Make it full width for smaller screens */
+    justify-content: center;
+  }
+
+  .chatIcon {
+    font-size: 16px;
+  }
+}
+
+/* =============================================  */
+
+.history {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px 10px; /* Reduced padding for better spacing */
+}
+
+/* History Section */
+.history-section {
+  margin-bottom: 15px;
+}
+
+/* History Title */
+.history-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+/* List Styles */
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* History Items */
+.history li {
+  font-size: 14px;
+  padding: 8px 12px; /* Slightly increased padding */
+  border-radius: 5px;
+  background: #ecf0f1;
+  margin-bottom: 5px;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Hover Effect */
+.history li:hover {
+  background: #d5dbdb;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .history {
+    padding: 15px 10px;
+  }
+  
+  .history-title {
+    font-size: 15px;
+  }
+
+  .history li {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .history {
+    padding: 10px;
+  }
+
+  .history-title {
+    font-size: 14px;
+  }
+
+  .history li {
+    font-size: 12px;
+    padding: 6px 10px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .history {
+    padding: 8px;
+  }
+
+  .history-title {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .history li {
+    font-size: 12px;
+    padding: 6px 8px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+/* ============================================================ */
+
+/* Tooltip Item */
+.tooltip-item {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip Box */
+.react-tooltip {
+  max-width: 250px !important; /* Prevents overly wide tooltips */
+  text-align: center;
+  white-space: normal; /* Allows text wrapping */
+  font-size: 14px;
+  padding: 8px;
+}
+
+/* Sidebar Items (Get App & Profile) */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  /* border-radius: 8px; */
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  width: 100%;
+}
+
+/* Hover Effect */
+.sidebar-item:hover {
+  background-color: #e0f7fa;
+}
+
+/* Sidebar Icons */
+.icon {
+  font-size: 20px;
+  color: #00796b;
+}
+
+/* Sidebar Item Text */
+.sidebar-item h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Notification Badge */
+.badge {
+  background-color: #ff5722;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .sidebar-item {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .sidebar-item h2 {
+    font-size: 14px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-item {
+    padding: 8px;
+    gap: 6px;
+    flex-direction: row; /* Ensures icons & text remain in a row */
+  }
+
+  .sidebar-item h2 {
+    font-size: 13px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-item {
+    padding: 6px;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .sidebar-item h2 {
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .react-tooltip {
+    max-width: 200px !important; /* Ensures tooltips remain readable */
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* Modal coding  */
+/* Modal Box */
+.modal {
+  width: 250px; /* Slightly larger default for better visibility */
+  max-width: 90%; /* Ensures it doesn't overflow on small screens */
+  background-color: white;
+  color: #444;
+  position: absolute;
+  bottom: 85px;
+  left: 20px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Modal Overlay */
+
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .modal {
+    width: 220px;
+    left: 10px;
+    bottom: 70px;
+  }
+
+  .modal-item {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 200px;
+    left: 5px;
+    bottom: 50px;
+  }
+
+  .modal-item {
+    font-size: 13px;
+    padding: 7px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    width: 180px;
+    bottom: 30px;
+    left: 2%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .modal-item {
+    font-size: 12px;
+    padding: 6px;
+    gap: 6px;
+  }
+}
+/* ============================ */
+
+
+
+/* Tooltip Container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip Text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  max-width: 290px;
+  width: auto;
+  height: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 10;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: normal; /* Allows text wrapping */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Tooltip Arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+/* Show Tooltip on Hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .tooltip .tooltiptext {
+    max-width: 250px;
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tooltip .tooltiptext {
+    max-width: 220px;
+    font-size: 12px;
+    bottom: 110%;
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tooltip .tooltiptext {
+    max-width: 180px;
+    font-size: 11px;
+    bottom: 100%;
+    padding: 3px 5px;
+    text-align: center;
+  }
+  
+  .tooltip .tooltiptext::after {
+    border-width: 4px;
+  }
+}
+/* ===========================================  */
+/* Email Item - Matches Hover Effect */
+/* Email Container */
+
+/* Icons */
+.icon {
+  font-size: 18px;
+  color: #007bff;
+}
+
+
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .email {
+    font-size: 10px; /* Slightly smaller text on smaller screens */
+    padding: 8px;
+  }
+
+  .icon {
+    font-size: 16px; /* Reduce icon size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .email {
+    font-size: 9px;
+    padding: 6px;
+    max-width: 100%; /* Full width on very small screens */
+  }
+}
+
+/* ================================================== */
+
+/* Setting Modals etc coding  */
+
+
+
+
+
+
+/* Button Container */
+.buttonDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  background-color: rgb(187, 183, 183);
+  height: 5vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.buttonDiv button {
+  width: 50%;
+  border-radius: 5px;
+  height: 4.5vh;
+}
+
+/* Active Button */
+.active {
+  background-color: white;
+  border: 1px solid gray;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+/* Profile Section */
+.profile-div {
+  width: 100%;
+}
+
+.profile-div .profile-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(247, 246, 246);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* General Modal Wrapper */
+.generalDiv {
+  width: 100%;
+  position: relative;
+  overflow: visible !important;
+  z-index: 1;
+}
+
+.generalDiv .general-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Select Dropdown Wrapper */
+.select-wrapper {
+  min-width: 120px;
+  max-width: 150px;
+  font-size: 14px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Custom Select Input */
+.custom-select__control {
+  min-height: 35px !important;
+  font-size: 14px !important;
+}
+
+/* Fix Dropdown Display */
+.custom-select__menu {
+  max-height: unset !important;
+  overflow: visible !important;
+  z-index: 9999 !important;
+  position: absolute !important;
+  background-color: white !important;
+  width: 100% !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-select__menu-portal {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================ */
+/* ==================================================== */
+
+/* Contact us Component Coding is here  */
+
+
+/* Adjustments for smaller screens
+@media (max-width: 1024px) {
+  .Contact-container {
+    width: 40vw;
+  }
+} */
+
+/* @media (max-width: 768px) {
+  .Contact-container {
+    width: 60vw;
+    height: 80vh;
+    right: 5%;
+    bottom: 5%;
+  }
+} */
+
+/* @media (max-width: 480px) {
+  .Contact-container {
+    width: 90vw;
+    height: 75vh;
+    right: 5%;
+    bottom: 5%;
+  }
+} */
+
+/* ------------------ end of contact continer coding --------------  */
+/* Close button responsiveness */
+#close-contact {
+  position: absolute;
+  top: 5%;
+  right: 5%; /* Adjusted for better placement on smaller screens */
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Adjust close button size on smaller screens */
+@media (max-width: 768px) {
+  #close-contact {
+    font-size: 18px;
+    right: 7%;
+  }
+}
+
+@media (max-width: 480px) {
+  #close-contact {
+    font-size: 16px;
+    right: 10%;
+  }
+}
+
+
+
+/* -------------------------------------------------------------- */
+
+/* Contact Header */
+/* Contact logo container */
+.contact-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 25px; /* Adjusted padding for responsiveness */
+}
+
+/* Contact title styling */
+.contact-title {
+  display: flex;
+  align-items: center;
+}
+
+/* Title styling */
+.contact-title h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin: 0; /* Remove extra margin */
+}
+
+/* Logo icon */
+.logo-icon {
+  font-size: 30px;
+  color: #444;
+}
+
+/* Close button styling */
+.close-btn {
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .contact-logo {
+    padding: 30px 20px;
+  }
+  
+  .contact-title h1 {
+    font-size: 24px;
+  }
+
+  .logo-icon {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-logo {
+    padding: 20px 15px;
+  }
+  
+  .contact-title h1 {
+    font-size: 22px;
+  }
+
+  .logo-icon {
+    font-size: 24px;
+  }
+
+  .close-btn {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-logo {
+    padding: 15px 10px;
+    flex-direction: column; /* Stack items on small screens */
+    align-items: flex-start;
+  }
+
+  .contact-title h1 {
+    font-size: 20px;
+  }
+
+  .logo-icon {
+    font-size: 22px;
+  }
+
+  .close-btn {
+    padding: 5px 8px;
+  }
+}
+/* -------------------------------------------- */
+
+/* Close Button Hover */
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Greeting Title */
+.hi-title {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+#hi {
+  font-size: 30px;
+  font-weight: bold;
+  color: #222;
+}
+
+#hi span {
+  color: gray;
+}
+
+#hi-question {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Card Styling */
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  #hi {
+    font-size: 26px;
+  }
+
+  #hi-question {
+    font-size: 20px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hi-title {
+    margin-left: 20px;
+  }
+
+  #hi {
+    font-size: 24px;
+  }
+
+  #hi-question {
+    font-size: 18px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-second {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hi-title {
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+
+  #hi {
+    font-size: 22px;
+  }
+
+  #hi-question {
+    font-size: 16px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-second {
+    width: 100%;
+  }
+
+  .card-message {
+    font-size: 12px;
+  }
+
+  .text-muted {
+    font-size: 11px;
+  }
+}
+/* -------------------------------------------  */
+/* the second card coding is here  */
+/* Second Card Styling */
+
+
+
+
+/* Second Card Items */
+.second-cardItem {
+  padding: 8px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.second-cardItem:hover {
+  background-color: rgb(210, 208, 208);
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .second-card {
+    width: 95%;
+    padding: 12px 20px;
+  }
+
+  .second-cardItem {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .second-card {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .second-cardItem {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .second-card {
+    width: 100%;
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .second-cardItem {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}
+/* ---------------------------------------------------------------- */
+/* Contact support  */
+/* Contact Support Card */
+
+
+/* .contact-support:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+} */
+
+
+/* Responsive Design */
+/* @media (max-width: 1024px) {
+  .contact-support {
+    width: 95%;
+    padding: 12px 20px;
+  }
+
+  .support-cardItem {
+    font-size: 16px;
+    padding: 7px 12px;
+  }
+} */
+
+/* @media (max-width: 768px) {
+  .contact-support {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .support-cardItem {
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 10px;
+  }
+} */
+
+/* @media (max-width: 480px) {
+  .contact-support {
+    width: 100%;
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .support-cardItem {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+} */
+/* ---------------------------------------------------  */
+
+/* Contact buttons  */
+/* Contact Buttons */
+/* .contact-buttons {
+  width: 100%;
+  height: 80px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px 5px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0; 
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+} */
+
+/* Message Title Close */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-buttons {
+    height: 70px;
+    padding: 12px 10px;
+  }
+
+  .message-contact-support {
+    width: 50%;
+    right: 25%;
+    bottom: 18%;
+  }
+
+  .message-support-cardItem {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .message-contact-support {
+    width: 60%;
+    right: 20%;
+    bottom: 15%;
+  }
+
+  .message-support-cardItem {
+    flex-direction: column;
+    font-size: 11px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+  }
+
+  .message-contact-support {
+    width: 80%;
+    right: 10%;
+    bottom: 12%;
+  }
+
+  .message-support-cardItem {
+    font-size: 10px;
+  }
+
+  .message-h1 {
+    font-size: 15px;
+  }
+}
+
+/* -------------------------------------------------  */
+/* now the suggested message coding is start  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+/* @media (max-width: 1024px) {
+  .first-help-question-card {
+    width: 25vw;
+  }
+
+  .suggested-first-name {
+    font-size: 18px;
+  }
+
+  .suggest-p {
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .suggested-first {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .suggested-first h1 {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .suggested-first-name {
+    font-size: 16px;
+  }
+
+  .suggest-p {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .first-help-question-card {
+    width: 40vw;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .suggested-title {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .suggested-first h1 {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .suggested-first-name {
+    font-size: 14px;
+  }
+
+  .suggest-p {
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+
+  .first-help-question-card {
+    width: 60vw;
+    margin-left: 0;
+  }
+} */
+
+/* =============================================================  */
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .third-suggested-questions {
+    align-items: center; /* Center align on medium screens */
+    text-align: center;
+  }
+
+  .third-suggested-questions > p {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .third-sug-row {
+    justify-content: center; /* Center content */
+  }
+}
+
+@media (max-width: 768px) {
+  .third-suggested-questions {
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .third-suggested-questions > p {
+    font-size: 12px;
+    padding: 6px 8px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .third-sug-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .third-sug-row > p {
+    font-size: 12px;
+    padding: 6px 8px;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .third-suggested-questions {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .third-suggested-questions > p {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .third-sug-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .third-sug-row > p {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+
+
+
+
+
+/* Main Content */
+.main-content {}
